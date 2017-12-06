@@ -1,5 +1,6 @@
 package com.alds.linkedlist;
 import static org.junit.Assert.*;
+import static com.alds.linkedlist.CutomLinkedListHelper.*;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -42,8 +43,5 @@ public class TestRemoveDuplicates {
         assertTrue(list.containsAll(Arrays.asList(0,1,2)));
     }
 
-    private void initializeList(CustomLinkedList<Integer> list, Integer...values){
-        for (Integer val: values)
-            list.addFirst(val);
-    }
+
 }
