@@ -2,7 +2,7 @@ package com.alds.util;
 
 public class Helper {
 
-    public static void checkNotNull(String input) {
+    public static void checkNotNull(Object input) {
         if (input == null)
             throw new IllegalArgumentException("Input is null");
     }

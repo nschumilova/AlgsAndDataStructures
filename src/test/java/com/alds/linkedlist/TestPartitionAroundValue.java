@@ -1,7 +1,7 @@
 package com.alds.linkedlist;
 
 import static org.junit.Assert.*;
-import static com.alds.linkedlist.CutomLinkedListHelper.*;
+import static com.alds.linkedlist.LinkedListHelper.*;
 
 import org.junit.Test;
 
