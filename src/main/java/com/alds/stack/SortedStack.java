@@ -19,7 +19,6 @@ public class SortedStack<T extends Comparable<T>> extends CustomStack<T> {
      * and <i>O(1)</i> in the best case (when new element is the smallest).
      * Memory usage is  <i>O(1)</i> in the best case and <i>O(N)</i> in the worst case</p>
      *
-     * @return minimum element in a stack
      */
     @Override
     public void push(T item) {
