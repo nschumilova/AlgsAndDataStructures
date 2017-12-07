@@ -10,7 +10,8 @@ public class BinaryTreeProcessor {
     /**
      * <p>Task 4.10. Time for implementation and testing :<i>50 min</i></p>
      * Function that checks whether a tree can contain another tree as subtree in one of own nodes.
-     * <p>Performance and memory: in worst case <i>O((N1*(2^(N2+1)))</i> (N1 - size of a tree, N2 - size of subtree).
+     * <p>Performance : in worst case <i>O((N1*(2^(N2+1)))</i> (N1 - size of a tree, N2 - size of subtree).
+     * Memory:<i>O(Ki+ log(N2))</i> (Ki - number of nodes on the i-th level of a tree, N2 - size of subtree)
      *
      * @param tree    - tree to check
      * @param subtree - possible candidate for subtree
@@ -42,8 +43,9 @@ public class BinaryTreeProcessor {
 
     /**
      *
-     * Performance and Memory: 1 + 2 + 4 + 8 +...+ 2^N = 2^(N+1) - 1 in worst case,
+     * Performance : O(1 + 2 + 4 + 8 +...+ 2^N) = O(2^(N+1) - 1) in worst case,
      * where N is the size of subtree
+     * Memory: O(log(N))
      *
      */
     private static <T> boolean hasSubtree(BinaryTreeNode<T> root, BinaryTreeNode<T> subtree) {
