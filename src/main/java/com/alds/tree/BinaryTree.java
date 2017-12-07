@@ -62,6 +62,10 @@ public class BinaryTree<T> {
         }
     }
 
+    public BinaryTreeNode<T> getRoot() {
+        return root;
+    }
+
     public boolean isEmpty() {
         return root == null;
     }
