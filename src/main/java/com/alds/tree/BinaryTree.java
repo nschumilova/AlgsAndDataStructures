@@ -7,7 +7,7 @@ import java.util.*;
  *
  * @param <T> type of the data which is stored in the node
  */
-public class BinaryTree<T extends Comparable<T>> {
+public class BinaryTree<T> {
     private BinaryTreeNode<T> root;
 
     public BinaryTree() {
@@ -66,7 +66,7 @@ public class BinaryTree<T extends Comparable<T>> {
         return root == null;
     }
 
-    private static class NodeWrapper<T extends Comparable<T>> {
+    private static class NodeWrapper<T> {
         BinaryTreeNode<T> node;
         int level;
 

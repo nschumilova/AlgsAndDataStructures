@@ -10,7 +10,7 @@ import static com.alds.util.Helper.checkNotNull;
  * Custom implementation of binary tree node with basic methods set
  * @param <T> type of the data which is stored in the node
  */
-public class BinaryTreeNode<T extends Comparable<T>> {
+public class BinaryTreeNode<T> {
     private T item;
     private BinaryTreeNode<T> leftChild;
     private BinaryTreeNode<T> rightChild;

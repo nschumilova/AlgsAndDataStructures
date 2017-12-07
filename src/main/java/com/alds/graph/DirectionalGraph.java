@@ -4,7 +4,12 @@ import java.util.*;
 
 import static com.alds.util.Helper.checkNotNull;
 
-public class DirectionalGraph<T extends Comparable<T>> {
+/**
+ * Class which represemts a bidirectional graph
+ *
+ * @param <T> type of data which resides in the graph's nodes
+ */
+public class DirectionalGraph<T> {
     private List<Node<T>> nodes = new ArrayList<>();
 
 
