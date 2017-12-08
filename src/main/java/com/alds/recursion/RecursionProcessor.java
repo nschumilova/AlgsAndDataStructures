@@ -17,7 +17,7 @@ public class RecursionProcessor {
      * Method  that implements hanoy towers problem.
      * <p>Performance depends on the size of the source stack and equals <i>O(2^N)</i>
      * (2 because the third recursive call takes O(1)).
-     * Memory usage is <i>O(log(N/3))</i>
+     * Memory usage is <i>O(log(N/3))</i></p>
      *
      * @param sourceStack      - stack which contains disks sorted from bottom to top (desc)
      * @param destinationStack - stack where the disks must be put
@@ -53,7 +53,8 @@ public class RecursionProcessor {
      * <p>Task 8.7. Time for implementation and testing :<i>30 min</i></p>
      * Method  that creates all permutations of word's letters.
      * <p>Performance depends on the number of word's letters: <i>O(2^N)</i>.
-     * Memory usage is <i>O(N + log(N)+K)</i>, where K is the number of permutations
+     * Memory usage is <i>O(N + log(N)+K)</i>, where K is the number of permutations</p>
+     *
      * @param string - word
      * @return list of all permutations
      */
@@ -104,5 +105,57 @@ public class RecursionProcessor {
             }
             return list;
         }
+    }
+
+    /**
+     * <p>Task 8.13. Time for implementation and testing :<i>30 min</i></p>
+     * Finds max height of boxes which can be inserted one into another,
+     * provided that the box which is inserted is less by all parameters(height, width, length)
+     * than the box where the insertion occurs
+     * <p>Performance : sorting <i>O(N log N)</i> +  finding paths: <i>O(N*K)</i>,
+     * where N is the size of input array of boxes and K
+     * is the number of boxes which are inserted one into another
+     * Memory usage is <i>O(N + K)</i>, where N stands for the size of additional array,
+     * which contains computed heights, and K stands for the number of boxes which are inserted one into another</p>
+     *
+     * @param array - array of all boxes
+     * @return max height of inserted boxes
+     */
+    public static int getMaxHeightOfBoxesStack(Box[] array) {
+        checkNotNull(array);
+
+        Arrays.sort(array, Comparator.comparingInt(Box::getHeight).reversed());
+        int maxHeight = 0;
+        int[] foundHeights = new int[array.length];
+        for (int i = 0; i < array.length; i++) {
+            int height = getMaxHeightOfBoxesStackRecursively(array, i, foundHeights);
+            if (maxHeight < height)
+                maxHeight = height;
+        }
+        return maxHeight;
+    }
+
+    private static int getMaxHeightOfBoxesStackRecursively(Box[] array, int currentIndex, int[] foundHeights) {
+
+        if (foundHeights[currentIndex] != 0)
+            return foundHeights[currentIndex];
+        int maxHeight = array[currentIndex].getHeight();
+        for (int nextIndex = currentIndex + 1; nextIndex < array.length; nextIndex++) {
+            if (boxInsertionPossible(array[currentIndex], array[nextIndex])) {
+                int height = array[currentIndex].getHeight() +
+                        getMaxHeightOfBoxesStackRecursively(array, currentIndex + 1, foundHeights);
+                if (maxHeight < height)
+                    maxHeight = height;
+            }
+
+        }
+        foundHeights[currentIndex] = maxHeight;
+        return maxHeight;
+    }
+
+    private static boolean boxInsertionPossible(Box outerBox, Box innerBox) {
+        return outerBox.getHeight() > innerBox.getHeight() &&
+                outerBox.getWidth() > innerBox.getWidth() &&
+                outerBox.getLength() > innerBox.getLength();
     }
 }
