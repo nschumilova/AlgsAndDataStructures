@@ -38,7 +38,7 @@ public class DirectionalGraph<T> {
      * <p>Checks whether a graph contains a route between two nodes using BFS-algorithm</p>
      * <p>Performance depends on the length of the path <i>O(K)</i>,
      * where <i>K</i> can in worst case be equal to the number of all elements in a graph.
-     * Memory usage depends on the length of the path as well <i>O(K)</i> (size of a queue +
+     * Memory usage depends on the length of the path as well <i>O(2K)</i> (size of a queue +
      * size of hashset)</p>
      *
      * @param from - start of the route

@@ -12,8 +12,8 @@ public class SearchProcessor {
     /**
      * <p>Task 10.3. Time for implementation and testing :<i>60 min</i></p>
      * Searches index of an element in sorted(asc) array which is shifted  by unknown number
-     * Performance: from <i>O(logN)</i> to <i>O(N)</i>
-     * Memory: <i>O(1)</i>
+     * Performance: from <i>O(log N)</i> to <i>O(N)</i>
+     * Memory: depth of recursion from <i>O(log N)</i> to <i>O(N)</i>
      *
      * @param arr   - sorted and shifted array
      * @param value - value to search

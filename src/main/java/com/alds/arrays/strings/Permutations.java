@@ -18,7 +18,7 @@ public class Permutations {
      * <p>Checks whether one string is a permutation of the other</p>
      * <p>Performance depends on the sorting algorithm and equals <i>O(N log(N))</i> (quicksort is used),
      * where <i>N</i> is the size of a string.
-     * Memory usage is <i>O(N)</i> (size of first string's copy + size of second string's copy)</p>
+     * Memory usage is <i>O(2N)</i> (size of first string's copy + size of second string's copy)</p>
      *
      * @param str1 - initial string
      * @param str2 - possible candidate for permutation
@@ -53,7 +53,7 @@ public class Permutations {
      * <p>Checks whether a string is a permutation of palindrome</p>
      * <p>Performance depends on the HashMap traversing and equals <i>O(N)</i>,
      * where <i>N</i> is the size of a string.
-     * Memory usage is <i>O(N)</i> (size of string's copy + size of Map (= size of string))</p>
+     * Memory usage is <i>O(2N)</i> (size of string's copy + size of Map (= size of string))</p>
      * @param string
      * @return
      */

@@ -78,7 +78,7 @@ public class CustomLinkedList<T> {
      * <p>Task 2.1. Time for implementation and testing :<i>40 min</i></p>
      * <p>Removes duplicated elements in unsorted linked list.</p>
      * <p>Performance depends on the size of list and equals <i>O(N)</i>.
-     * Memory usage is <i>O(N)</i> (size of the list + size of HashSet (<= <i>N</i>))</p>
+     * Memory usage is <i>O(2N)</i> (size of the list + size of HashSet (<= <i>N</i>))</p>
      */
     public void removeDuplicatesUsingBuffer() {
         if (size <= 1)

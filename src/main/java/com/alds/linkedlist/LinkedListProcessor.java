@@ -16,7 +16,7 @@ public class LinkedListProcessor {
      * Function that adds two numbers represented as a linked list, where each node contains a single digit.
      * The digits are stored in reverse order.
      * <p>Performance depends on the size of the largest list and equals <i>O(max(N1, N2)</i> (defined by the lists traversal).
-     * Memory usage is <i>O(max(N1, N2)</i> (size of the first list + size of the second list + size of the result)</p>
+     * Memory usage is <i>O(max(N1, N2)</i> (size of the result)</p>
      *
      * @param firstNumber  - first number to add
      * @param secondNumber - second number to add
@@ -48,7 +48,7 @@ public class LinkedListProcessor {
      * <p>Performance depend on the size of a list and is equal to <i>O(N)</i> (defined by the list traversal).
      * Memory usage depend on the depth of recursion and equals to  <i>O(N/2)</i></p>
      *
-     * @param list - list which checked to contain palindrome
+     * @param list - list which is checked to contain palindrome
      * @return - <code>true</code> if the list is palindrome and <code>false</code> otherwise
      */
     public static boolean isListPalindrome(LinkedList<Character> list) {

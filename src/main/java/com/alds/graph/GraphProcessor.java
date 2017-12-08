@@ -12,8 +12,10 @@ public class GraphProcessor {
      * before the project is</p>
      * <p>Performance equals <i>O(N*K)</i>,
      * where <i>N</i> is the size of projects and <i>K</i> is the size of path of dependencies in a project.
-     * Memory usage : <i>O((N*K+L))</i> (<i>N</i> is the size of projects in a graph,
-     * <i>K</i> is the size of visited nodes in a set, <i>L</i> is the size of dependencies in a graph)</p>
+     * Memory usage : size of graph <i>O((N+L))</i> (<i>N</i> is the size of projects in a graph,
+     *  <i>L</i> is the size of dependencies in a graph)(the sizes of stack and list of correct
+     *  are not taken into account, because when an element is added to a list, the same element
+     *  is removed from graph and stack)</p>
      *
      * @param projects       list of projects
      * @param dependencyList list of projects' dependencies

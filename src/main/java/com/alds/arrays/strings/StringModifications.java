@@ -34,7 +34,7 @@ public class StringModifications {
      * (One while loop (number of iterations <i>N</i>): in some iterations <code>StringBuilder.append</code> is called
      * which could lead to dynamic internal array resizing. Each <code>append</code> is <i>O(1)</i> on average,
      * even though some <code>append</code> take <i>O(N)</i> in worst case).
-     * Memory usage is <i>O(N)</i> (size of initial string + size of StringBuilder(<=<i>N</i>) +
+     * Memory usage is <i>O(2N)</i> (size of initial string + size of StringBuilder(<=<i>N</i>) +
      * size of a new String(<=<i>N</i>))</p>
      * @param str
      * @return

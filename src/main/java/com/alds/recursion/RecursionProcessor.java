@@ -108,7 +108,7 @@ public class RecursionProcessor {
     }
 
     /**
-     * <p>Task 8.13. Time for implementation and testing :<i>30 min</i></p>
+     * <p>Task 8.13. Time for implementation and testing :<i>60 min</i></p>
      * Finds max height of boxes which can be inserted one into another,
      * provided that the box which is inserted is less by all parameters(height, width, length)
      * than the box where the insertion occurs

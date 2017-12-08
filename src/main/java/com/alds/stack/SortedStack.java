@@ -1,9 +1,5 @@
 package com.alds.stack;
 
-import java.util.Comparator;
-import java.util.function.BiPredicate;
-import java.util.function.Predicate;
-
 /**
  * Stack that stores elements in sorted order.(Min element is always on top).
  *
