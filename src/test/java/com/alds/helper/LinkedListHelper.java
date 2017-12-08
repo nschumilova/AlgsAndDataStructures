@@ -1,4 +1,6 @@
-package com.alds.linkedlist;
+package com.alds.helper;
+
+import com.alds.linkedlist.CustomLinkedList;
 
 import java.util.LinkedList;
 import java.util.List;

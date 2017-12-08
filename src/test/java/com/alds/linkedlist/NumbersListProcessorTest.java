@@ -1,6 +1,6 @@
 package com.alds.linkedlist;
 
-import static com.alds.linkedlist.LinkedListHelper.initializeList;
+import static com.alds.helper.LinkedListHelper.initializeList;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
