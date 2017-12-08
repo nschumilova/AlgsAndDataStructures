@@ -9,7 +9,7 @@ public class CoursesFinder {
     /**
      * Finds max number of non overlapping intervals
      *
-     * <p>Performance: sorting O(log N)+ nested loop(O(N^2)), but since
+     * <p>Performance: sorting O(N log N)+ nested loop(O(N^2)), but since
      *  theree is a hashset of visited intervals some branches will not be checked
      *  (for example, if 1->2->3 was visited, then 2->3 will not be visited). Hence,
      *  the nested loop will equal to (O(K), where K is the length of the list with non overlapping intervals</p>
