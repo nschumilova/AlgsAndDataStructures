@@ -32,4 +32,22 @@ public class IntPairContainer {
     public int getSecond() {
         return second;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        IntPairContainer that = (IntPairContainer) o;
+
+        if (first != that.first) return false;
+        return second == that.second;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = first;
+        result = 31 * result + second;
+        return result;
+    }
 }
