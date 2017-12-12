@@ -25,6 +25,19 @@ public class IntPairContainer {
 
     }
 
+    /**
+     * <p>Task 16.7. Time for implementation and testing :<i>15 min</i></p>
+     * Finds maximum value between two values in the container without using
+     * comparison operators
+     * Performance, memory :  <i>O(1)</i>
+     *
+     * @return maximum value
+     */
+    public int getMax() {
+        int k = (first - second) >>> 31;//==1(if first < second), ==0 otherwise
+        return second * k + first * (k ^ 1);
+    }
+
     public int getFirst() {
         return first;
     }
