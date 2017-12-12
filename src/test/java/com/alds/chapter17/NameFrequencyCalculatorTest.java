@@ -11,7 +11,7 @@ import static org.junit.Assert.*;
 public class NameFrequencyCalculatorTest {
 
     @Test(expected = IllegalArgumentException.class)
-    public void testCalculateNameFrequenciesWhenUnputNull() {
+    public void testCalculateNameFrequenciesWhenInputNull() {
         NameFrequencyCalculator.calculateNameFrequencies(null, null);
 
     }
