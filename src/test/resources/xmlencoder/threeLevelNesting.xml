@@ -1,0 +1,11 @@
+<families>
+    <family lastName="Heinz" state="CA">
+        <person firstName="Hans">One</person>
+        <person firstName="Helga">Two</person>
+    </family>
+    <family lastName="Zimmerman" state="CA">
+        <person firstName="Markus">Three</person>
+        <person firstName="Erika">Four</person>
+        <person firstName="Timmy">Five</person>
+    </family>
+</families>
