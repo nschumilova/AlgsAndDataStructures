@@ -7,31 +7,33 @@ package com.alds.chapter16;
 public class Trie {
     private static final int ALPHABET_SIZE = 26;
     private static final char START_OF_ALPHABET = 'a';
-    private TrieNode root = new TrieNode(false);
+    protected TrieNode root = new TrieNode(false);
 
-    private static class TrieNode {
-        boolean wordEnd;
+    protected boolean empty = true;
+
+    public static class TrieNode {
+        private boolean wordEnd;
         private TrieNode[] children = new TrieNode[ALPHABET_SIZE];
 
 
-        public TrieNode(boolean isWordEnd) {
+        TrieNode(boolean isWordEnd) {
             this.wordEnd = isWordEnd;
             children = new TrieNode[ALPHABET_SIZE];
         }
 
-        boolean isWordEnd() {
+        public boolean isWordEnd() {
             return wordEnd;
         }
 
-        boolean containsChild(int index) {
+        public boolean containsChild(int index) {
             return children[index] != null;
         }
 
-        TrieNode getChildAt(int index) {
+        public TrieNode getChildAt(int index) {
             return children[index];
         }
 
-        void setChildAt(int index, boolean isChildWordEnd) {
+        public void setChildAt(int index, boolean isChildWordEnd) {
             children[index] = new TrieNode(isChildWordEnd);
         }
     }
@@ -39,7 +41,7 @@ public class Trie {
     public void addWord(String word) {
         TrieNode node = root;
         for (int i = 0; i < word.length(); i++) {
-            int index = word.charAt(i) - START_OF_ALPHABET;
+            int index = charToInt(word, i);
             if (!isValidCharacter(index))
                 throw new IllegalArgumentException(word.charAt(i) + " is not alphabetic ");
             if (!node.containsChild(index))
@@ -48,12 +50,20 @@ public class Trie {
                 node.wordEnd = true;
             node = node.getChildAt(index);
         }
+        empty=false;
+    }
+
+    protected int charToInt(String word, int index) {
+        return word.charAt(index) - START_OF_ALPHABET;
+    }
+    protected char intToChar(int index){
+        return (char) (index+START_OF_ALPHABET);
     }
 
     public CharSequenceType getCharSequenceType(String charSequence) {
         TrieNode node = root;
         for (int i = 0; i < charSequence.length(); i++) {
-            int index = charSequence.charAt(i) - START_OF_ALPHABET;
+            int index = charToInt(charSequence, i);
             if (!isValidCharacter(index) || !node.containsChild(index))
                 return CharSequenceType.NOT_WORD;
             else if (i == charSequence.length() - 1) {
@@ -65,6 +75,10 @@ public class Trie {
             node = node.getChildAt(index);
         }
         return CharSequenceType.NOT_WORD;
+    }
+
+    public boolean isEmpty() {
+        return empty;
     }
 
     private boolean isValidCharacter(int index) {
